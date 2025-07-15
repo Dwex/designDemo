@@ -1,0 +1,17 @@
+{
+  "name": "design-system-demo-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/react",
+    "packages/angular"
+  ],
+  "scripts": {
+    "start:react": "npm start --workspace=@design-system-demo/react",
+    "start:angular": "npm start --workspace=@design-system-demo/angular",
+    "update-tokens": "node update-tokens.js"
+  },
+  "devDependencies": {
+    "@angular/cli": "^18.0.0"
+  }
+}
