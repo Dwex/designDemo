@@ -18,7 +18,10 @@ fs.readFile(tokensPath, 'utf8', (err, data) => {
   }
 
   // Modify a token value (e.g., change primary color to a new shade)
-  const newPrimaryColor = '#0056b3'; // A darker blue
+  let newPrimaryColor = '#007bff';
+  if(tokens.color.primary.value == '#007bff'){
+    newPrimaryColor = '#0056b3'; // A darker blue
+  }
   tokens.color.primary.value = newPrimaryColor;
 
   fs.writeFile(tokensPath, JSON.stringify(tokens, null, 2), 'utf8', (writeErr) => {
